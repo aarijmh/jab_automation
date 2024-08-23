@@ -19,6 +19,7 @@ class JabAutomation:
 
     def run(self, jabdriver : JABDriver):
         for command in self._commands:
+            print(f"Executing command: {command}")
             if command.action_type.lower() == "pause":
                 time.sleep(float(command.value))
             elif command.role.lower() == "text":
