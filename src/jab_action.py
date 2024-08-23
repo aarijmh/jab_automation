@@ -10,4 +10,7 @@ class JabAction:
         self.role = role
         self.action_type = action_type
         self.value = value
+        
+    def __str__(self) -> str:
+        return f"{self.name}  {self.role}  {self.action} {self.action_type} {self.value}"
     
