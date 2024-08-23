@@ -22,29 +22,42 @@ class JabAutomation:
             print(f"Executing command: {command}")
             if command.action_type.lower() == "pause":
                 time.sleep(float(command.value))
+                print("sleep finished")
             elif command.role.lower() == "text":
-                elem = jabdriver.find_element_by_name(command.name)
+                #elem = jabdriver.find_element_by_name(command.name)
+                elem  = jabdriver.find_element_by_xpath(f"//text[@name=contains('{command.name}')]")
+                elem.send_text(command.value, True)
+            elif command.role.lower() == "password text":
+                elem  = jabdriver.find_element_by_xpath(f"//password text[@name=contains('{command.name}')]")
                 elem.send_text(command.value, True)
             elif command.role.lower() == "push button":
-                elem = jabdriver.find_element_by_name(command.name)
+                elem  = jabdriver.find_element_by_xpath(f"//push button[@name=contains('{command.name}')]")
+                print(elem)
                 elem.click()
             elif command.role.lower() == "label":
                 elem = jabdriver.find_element_by_xpath(f"//label[@name=contains('{command.name}')]")
                 elem.click()
+            elif command.role.lower() == "option pane":
+                elem = jabdriver.find_element_by_xpath(f"//option pane[@name=contains('{command.name}')]")
+                elem.click()
+        print("All executed")
                 
 if __name__ == "__main__":
     
     w32 = Win32Utils()
-    jabAutomation = JabAutomation("commands1.csv")
+    jabAutomation = JabAutomation("commands.csv")
     # Get handles of all windows
     window_handles = w32.enum_windows()
     
     for k,v in window_handles.items():
+        print(f"{k}   {v}")
         try:
             jabdriver = JABDriver(hwnd=k)
             jabAutomation.run(jabdriver=jabdriver)
             break
-        except Exception as e: pass
+        except Exception as e:
+            if v == "SYMBOLS - [LVNDRATNETKHI]":
+                print(e)
             
        
     

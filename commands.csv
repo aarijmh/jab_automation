@@ -1,3 +1,6 @@
 Enter UserName Required,text,send_text,send_text,692548
-Enter Password,text,send_text,send_text,cbs
+Enter Password,password text,send_text,send_text,cbs
 Connect alt o,push button,click,click,
+Continue >> alt C,push button,click,click,
+,,pause,pause,10
+OK ALT O,push button,click,click,
