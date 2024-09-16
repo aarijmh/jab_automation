@@ -7,6 +7,9 @@ from pyjab.common.win32utils import Win32Utils
 class JabAutomation:
     def __init__(self, command_file : str):
         self._commands = self.make_list_of_commands(command_file)
+
+    def init_commands(self, command_file : str):
+        self._commands = self.make_list_of_commands(command_file)
         
     def make_list_of_commands(self, command_file : str) -> JabAction:
         # Parse the command
@@ -106,6 +109,20 @@ class JabAutomation:
 
                 #elem.select(option=command.value, simulate=False)
         print("All executed")
+    
+    def start(self, windows_title:str):
+        if windows_title is not None:
+            # Get handles of all windows
+            window_handles = w32.enum_windows()
+            for k,v in window_handles.items():
+                try:
+                    if v == windows_title:
+                        jabdriver = JABDriver(hwnd=k)
+                        self.run(jabdriver)
+                        break
+                except Exception as e:
+                    if v == windows_title:
+                        print(e)                    
                 
 if __name__ == "__main__":
     

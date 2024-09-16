@@ -1,0 +1,15 @@
+[
+  {"display_name": "Enter Username", "name": "Enter UserName Required", "role": "text", "action": "send_text", "action_type": "send_text", "value": "684437", "index_in_parent": 0, "element_depth": 0},
+  {"display_name": "Enter Passowrd","name": "Enter Password", "role": "password text", "action": "send_text", "action_type": "send_text", "value": "cbs", "index_in_parent": 0, "element_depth": 0},
+  {"display_name": "Click Connect","name": "Connect alt o", "role": "push button", "action": "click", "action_type": "click", "value": "", "index_in_parent": 0, "element_depth": 0},
+  {"display_name": "Click Continue Button","name": "Continue >> alt C", "role": "push button", "action": "click", "action_type": "click", "value": "", "index_in_parent": 0, "element_depth": 0},
+  {"display_name": "Click ID Checkbox","name": "ID alt I", "role": "check box", "action": "click", "action_type": "click", "value": "0", "index_in_parent": 19, "element_depth": 0},
+  {"display_name": "Enter Command","name": "Select", "role": "text", "action": "send_text", "action_type": "send_text", "value": "TMFM1440", "index_in_parent": 1, "element_depth": 18},
+  {"display_name": "Open Client Form","name": "Run", "role": "push button", "action": "click", "action_type": "click", "value": "2", "index_in_parent": 18, "element_depth": 0},
+  {"display_name": "Approve Client", "name": "Enter UserName Required", "role": "approve_client", "action": "send_text", "action_type": "send_text", "value": "684437", "index_in_parent": 0, "element_depth": 0},
+  {"display_name": "Click Yes","name": "Yes ALT Y", "role": "message_box", "action": "click", "action_type": "click", "value": "0", "index_in_parent": 0, "element_depth": 15},
+  {"display_name": "Extract Tracking ID","name": "Commit","file_name":"client_id.txt", "role": "extract_digits", "action": "click", "action_type": "click", "value": "", "index_in_parent": 0, "element_depth": 15},
+  {"display_name": "Click Okay Message","name": "Ok ALT O", "role": "message_box", "action": "click", "action_type": "click", "value": "0", "index_in_parent": 0, "element_depth": 15},
+  {"display_name": "Click Close Form","name": "Quit", "role": "push button", "action": "click", "action_type": "click", "value": "", "index_in_parent": 9, "element_depth": 16},
+  {"display_name": "Click Logout","name": "Save and Exit", "role": "push button", "action": "click", "action_type": "click", "value": "", "index_in_parent": 7, "element_depth": 18}
+]
